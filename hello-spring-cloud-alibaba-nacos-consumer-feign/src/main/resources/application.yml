@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: nacos-consumer-feign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.18:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.10.18:8858
+
+
+# 开启服务熔断
+feign:
+  sentinel:
+    enabled: true
+
+
+server:
+  port: 9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
